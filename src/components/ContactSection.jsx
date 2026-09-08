@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { Mail, Phone, MapPin, Clock, Send, Shield, X } from 'lucide-react'
 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4xEh99CqMOKHhkHnUHffWA7Ni9OxzZHyg2t6iV1M1t34rxvu9XRS03GJVTIowtjAi/exec'
+
 export function EnquiryForm({ isModal = false, onClose }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,24 +13,101 @@ export function EnquiryForm({ isModal = false, onClose }) {
     subject: 'Request Demo',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState({ type: null, message: '' })
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      subject: 'Request Demo',
-      message: ''
-    })
-    if (isModal && onClose) {
-      onClose()
+    if (isSubmitting) return
+
+    setIsSubmitting(true)
+    setStatus({ type: null, message: '' })
+
+    try {
+      const params = new URLSearchParams()
+      params.append('Name', formData.name)
+      params.append('Email', formData.email)
+      params.append('Mobile', formData.phone)
+      params.append('Company_name', formData.company)
+      params.append('Enquiry', formData.subject)
+      params.append('Message', formData.message)
+      // Lowercase aliases for robust matching
+      params.append('name', formData.name)
+      params.append('email', formData.email)
+      params.append('phone', formData.phone)
+      params.append('company', formData.company)
+      params.append('subject', formData.subject)
+      params.append('message', formData.message)
+
+      let response
+      let isOpaque = false
+
+      try {
+        response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          body: params,
+        })
+      } catch (err) {
+        // Fallback to no-cors mode if cross-origin policy blocks standard response reading
+        response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: params,
+        })
+        isOpaque = true
+      }
+
+      let success = false
+
+      if (isOpaque || response.type === 'opaque') {
+        success = true
+      } else if (response.ok) {
+        try {
+          const text = await response.text()
+          if (text.includes('Error:') || text.includes('<!DOCTYPE') || text.includes('<html')) {
+            console.error('Google Script returned HTML error:', text)
+            success = false
+          } else {
+            try {
+              const result = JSON.parse(text)
+              success = result.success !== false
+            } catch {
+              success = text.includes('Added')
+            }
+          }
+        } catch {
+          success = false
+        }
+      }
+
+      if (!success) {
+        throw new Error('Google Sheet submission failed')
+      }
+
+      setStatus({ type: 'success', message: 'Submitted Successfully' })
+      alert('Enquiry submitted successfully')
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        subject: 'Request Demo',
+        message: ''
+      })
+      if (isModal && onClose) {
+        onClose()
+      }
+    } catch (error) {
+      console.error('Enquiry submission failed:', error)
+      setStatus({ type: 'error', message: 'Failed to submit enquiry. Please try again.' })
+      alert('Failed to submit enquiry. Please try again.')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -123,8 +202,19 @@ export function EnquiryForm({ isModal = false, onClose }) {
         ></textarea>
       </div>
 
+      {status.message && (
+        <div className={`col-12 alert ${status.type === 'success' ? 'alert-success bg-success bg-opacity-20 text-success border-success border-opacity-30' : 'alert-danger bg-danger bg-opacity-20 text-danger border-danger border-opacity-30'} py-2 px-3 mb-0 rounded small text-center`}>
+          {status.message}
+        </div>
+      )}
+
       <div className="col-12 mt-3">
-        <button type="submit" className="glass-button glass-button-primary w-100 py-2.5 d-flex align-items-center justify-content-center gap-2">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="glass-button glass-button-primary w-100 py-2.5 d-flex align-items-center justify-content-center gap-2"
+          style={isSubmitting ? { opacity: 0.7, cursor: 'not-allowed' } : {}}
+        >
           <span>Book Enquiry</span>
           <Send size={16} />
         </button>
