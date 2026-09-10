@@ -71,10 +71,11 @@ export function TechnologyStack() {
     if (!cards.length) return
     let closestIdx = 0
     let closestDist = Infinity
-    const center = el.scrollLeft + el.clientWidth / 2
+    const isMobile = window.innerWidth <= 767.98
+    const targetRefPoint = isMobile ? el.scrollLeft + 20 : el.scrollLeft + el.clientWidth / 2
     cards.forEach((card, i) => {
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2
-      const dist = Math.abs(cardCenter - center)
+      const cardRefPoint = isMobile ? card.offsetLeft : card.offsetLeft + card.offsetWidth / 2
+      const dist = Math.abs(cardRefPoint - targetRefPoint)
       if (dist < closestDist) {
         closestDist = dist
         closestIdx = i
@@ -97,8 +98,14 @@ export function TechnologyStack() {
     const cards = el.querySelectorAll('.techstack-card-snap')
     const card = cards[idx]
     if (!card) return
-    const targetScrollLeft = card.offsetLeft - (el.clientWidth / 2 - card.offsetWidth / 2)
-    el.scrollTo({ left: Math.max(0, targetScrollLeft), behavior: 'smooth' })
+    const isMobile = window.innerWidth <= 767.98
+    if (isMobile) {
+      const targetScrollLeft = card.offsetLeft - 20
+      el.scrollTo({ left: Math.max(0, targetScrollLeft), behavior: 'smooth' })
+    } else {
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    }
+    setActiveIndex(idx)
   }
 
   const scrollPrev = () => {

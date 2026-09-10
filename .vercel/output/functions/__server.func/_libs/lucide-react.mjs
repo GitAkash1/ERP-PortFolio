@@ -166,6 +166,19 @@ var ArrowDownRight = createLucideIcon("arrow-down-right", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ArrowLeft = createLucideIcon("arrow-left", [["path", {
+	d: "m12 19-7-7 7-7",
+	key: "1l729n"
+}], ["path", {
+	d: "M19 12H5",
+	key: "x3x0zl"
+}]]);
+/**
+* @license lucide-react v1.35.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var ArrowRight = createLucideIcon("arrow-right", [["path", {
 	d: "M5 12h14",
 	key: "1ays0h"
@@ -1366,4 +1379,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Archive, ArrowDownRight, ArrowRight, Building2, Calculator, ChartColumn, ChartNoAxesColumnIncreasing, ChevronLeft, ChevronRight, ChevronUp, CircleCheck, CircleQuestionMark, Clipboard, ClipboardCheck, ClipboardList, Clock, Cpu, DollarSign, FileChartColumn, FileCheckCorner, FileSpreadsheet, FileText, Folder, FolderClosed, FolderGit2, FolderKanban, IndianRupee, Info, Key, Layers, LayoutGrid, Link, Mail, MapPin, Menu, MessageSquareQuote, PackageCheck, Phone, Plus, Scale, Search, Send, Server, Settings, Shield, ShieldAlert, ShieldCheck, ShoppingCart, SlidersHorizontal, Sparkles, Star, TriangleAlert, UserCheck, Users, UsersRound, X };
+export { Archive, ArrowDownRight, ArrowLeft, ArrowRight, Building2, Calculator, ChartColumn, ChartNoAxesColumnIncreasing, ChevronLeft, ChevronRight, ChevronUp, CircleCheck, CircleQuestionMark, Clipboard, ClipboardCheck, ClipboardList, Clock, Cpu, DollarSign, FileChartColumn, FileCheckCorner, FileSpreadsheet, FileText, Folder, FolderClosed, FolderGit2, FolderKanban, IndianRupee, Info, Key, Layers, LayoutGrid, Link, Mail, MapPin, Menu, MessageSquareQuote, PackageCheck, Phone, Plus, Scale, Search, Send, Server, Settings, Shield, ShieldAlert, ShieldCheck, ShoppingCart, SlidersHorizontal, Sparkles, Star, TriangleAlert, UserCheck, Users, UsersRound, X };

@@ -3,18 +3,16 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import { nitro } from 'nitro/vite'
 
-const config = defineConfig({
+export default defineConfig(({ command }) => ({
   resolve: { tsconfigPaths: true },
   plugins: [
     tanstackStart(),
-    nitro({
-      preset: 'vercel',
-    }),
+    ...(command === 'build' ? [nitro({ preset: 'vercel' })] : []),
     viteReact(),
   ],
-})
+}))
 
-export default config
+
 
 
 

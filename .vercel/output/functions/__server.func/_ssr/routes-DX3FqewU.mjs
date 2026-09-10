@@ -1,10 +1,10 @@
 import { __toESM } from "../_runtime.mjs";
 import { require_jsx_runtime, require_react, require_react_dom } from "../_libs/@tanstack/react-router+[...].mjs";
-import { image_default } from "./router-CtfZeV-_.mjs";
 import { Archive, ArrowDownRight, ArrowRight, Building2, Calculator, ChartColumn, ChartNoAxesColumnIncreasing, ChevronLeft, ChevronRight, ChevronUp, CircleCheck, CircleQuestionMark, Clipboard, ClipboardCheck, ClipboardList, Clock, Cpu, DollarSign, FileChartColumn, FileCheckCorner, FileSpreadsheet, FileText, Folder, FolderClosed, FolderGit2, FolderKanban, IndianRupee, Info, Key, Layers, LayoutGrid, Link, Mail, MapPin, Menu, MessageSquareQuote, PackageCheck, Phone, Plus, Scale, Search, Send, Server, Settings, Shield, ShieldAlert, ShieldCheck, ShoppingCart, SlidersHorizontal, Sparkles, Star, TriangleAlert, UserCheck, Users, UsersRound, X } from "../_libs/lucide-react.mjs";
+import { image_default } from "./router-Czzrui6V.mjs";
 import { require_dist } from "../_libs/react-fast-marquee.mjs";
 import { SiBootstrap, SiDjango, SiHtml5, SiPostgresql, SiPython, SiReact } from "../_libs/react-icons.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CgNSYsFF.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DX3FqewU.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var import_react_dom = require_react_dom();
@@ -4368,10 +4368,11 @@ function TechnologyStack() {
 		if (!cards.length) return;
 		let closestIdx = 0;
 		let closestDist = Infinity;
-		const center = el.scrollLeft + el.clientWidth / 2;
+		const isMobile = window.innerWidth <= 767.98;
+		const targetRefPoint = isMobile ? el.scrollLeft + 20 : el.scrollLeft + el.clientWidth / 2;
 		cards.forEach((card, i) => {
-			const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-			const dist = Math.abs(cardCenter - center);
+			const cardRefPoint = isMobile ? card.offsetLeft : card.offsetLeft + card.offsetWidth / 2;
+			const dist = Math.abs(cardRefPoint - targetRefPoint);
 			if (dist < closestDist) {
 				closestDist = dist;
 				closestIdx = i;
@@ -4391,11 +4392,18 @@ function TechnologyStack() {
 		if (!el) return;
 		const card = el.querySelectorAll(".techstack-card-snap")[idx];
 		if (!card) return;
-		const targetScrollLeft = card.offsetLeft - (el.clientWidth / 2 - card.offsetWidth / 2);
-		el.scrollTo({
-			left: Math.max(0, targetScrollLeft),
-			behavior: "smooth"
+		if (window.innerWidth <= 767.98) {
+			const targetScrollLeft = card.offsetLeft - 20;
+			el.scrollTo({
+				left: Math.max(0, targetScrollLeft),
+				behavior: "smooth"
+			});
+		} else card.scrollIntoView({
+			behavior: "smooth",
+			block: "nearest",
+			inline: "center"
 		});
+		setActiveIndex(idx);
 	};
 	const scrollPrev = () => {
 		const newIdx = Math.max(0, activeIndex - 1);
