@@ -4,7 +4,7 @@ import erpLogo from '../assets/image.png'
 
 // Centralized nav items -- mapped to existing section IDs in the landing page
 const navItems = [
-  { label: 'Solutions',    target: 'overview' },
+  { label: 'Solutions',    target: 'problem-solutions' },
   { label: 'Services',     target: 'modules' },
   { label: 'Client',       target: 'clients' },
   { label: 'Testimonials', target: 'testimonials' },

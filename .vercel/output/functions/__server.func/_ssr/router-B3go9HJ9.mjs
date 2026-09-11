@@ -13,7 +13,7 @@ var __exportAll = (all, no_symbols) => {
 	if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
 	return target;
 };
-var styles_default = "/assets/styles-B6xt79xb.css";
+var styles_default = "/assets/styles-CGhqjsCE.css";
 var image_default = "/assets/image-DsES8nxt.png";
 function NotFound() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -124,7 +124,7 @@ function RootDocument({ children }) {
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
 	});
 }
-var $$splitComponentImporter = () => import("./routes-DX3FqewU.mjs");
+var $$splitComponentImporter = () => import("./routes-BI4OebBN.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter, "component") }).update({
 	id: "/",
 	path: "/",

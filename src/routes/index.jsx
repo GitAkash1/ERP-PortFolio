@@ -4,6 +4,7 @@ import { Hero } from '../components/Hero'
 import { Overview } from '../components/Overview'
 import { Lifecycle } from '../components/Lifecycle'
 import { Modules } from '../components/Modules'
+import { ProblemSolutionSection } from '../components/ProblemSolutionSection'
 import { ProjectManagement } from '../components/ProjectManagement'
 import { BOQSection } from '../components/BOQSection'
 import { ProcurementSection } from '../components/ProcurementSection'
@@ -110,6 +111,11 @@ function Index() {
       {/* Section 03 — ERP Modules */}
       <div className="reveal">
         <Modules />
+      </div>
+
+      {/* Section — Problem & Solutions */}
+      <div className="reveal">
+        <ProblemSolutionSection />
       </div>
 
       {/* Section 04 — Product UI Showcase */}

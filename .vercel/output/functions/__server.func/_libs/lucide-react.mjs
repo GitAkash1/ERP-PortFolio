@@ -389,6 +389,28 @@ var CircleQuestionMark = createLucideIcon("circle-question-mark", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var CircleX = createLucideIcon("circle-x", [
+	["circle", {
+		cx: "12",
+		cy: "12",
+		r: "10",
+		key: "1mglay"
+	}],
+	["path", {
+		d: "m15 9-6 6",
+		key: "1uzhvr"
+	}],
+	["path", {
+		d: "m9 9 6 6",
+		key: "z0biqf"
+	}]
+]);
+/**
+* @license lucide-react v1.35.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var ClipboardCheck = createLucideIcon("clipboard-check", [
 	["rect", {
 		width: "8",
@@ -1379,4 +1401,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Archive, ArrowDownRight, ArrowLeft, ArrowRight, Building2, Calculator, ChartColumn, ChartNoAxesColumnIncreasing, ChevronLeft, ChevronRight, ChevronUp, CircleCheck, CircleQuestionMark, Clipboard, ClipboardCheck, ClipboardList, Clock, Cpu, DollarSign, FileChartColumn, FileCheckCorner, FileSpreadsheet, FileText, Folder, FolderClosed, FolderGit2, FolderKanban, IndianRupee, Info, Key, Layers, LayoutGrid, Link, Mail, MapPin, Menu, MessageSquareQuote, PackageCheck, Phone, Plus, Scale, Search, Send, Server, Settings, Shield, ShieldAlert, ShieldCheck, ShoppingCart, SlidersHorizontal, Sparkles, Star, TriangleAlert, UserCheck, Users, UsersRound, X };
+export { Archive, ArrowDownRight, ArrowLeft, ArrowRight, Building2, Calculator, ChartColumn, ChartNoAxesColumnIncreasing, ChevronLeft, ChevronRight, ChevronUp, CircleCheck, CircleQuestionMark, CircleX, Clipboard, ClipboardCheck, ClipboardList, Clock, Cpu, DollarSign, FileChartColumn, FileCheckCorner, FileSpreadsheet, FileText, Folder, FolderClosed, FolderGit2, FolderKanban, IndianRupee, Info, Key, Layers, LayoutGrid, Link, Mail, MapPin, Menu, MessageSquareQuote, PackageCheck, Phone, Plus, Scale, Search, Send, Server, Settings, Shield, ShieldAlert, ShieldCheck, ShoppingCart, SlidersHorizontal, Sparkles, Star, TriangleAlert, UserCheck, Users, UsersRound, X };

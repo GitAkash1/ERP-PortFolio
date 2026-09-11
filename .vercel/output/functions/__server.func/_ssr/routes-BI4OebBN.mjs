@@ -1,10 +1,10 @@
 import { __toESM } from "../_runtime.mjs";
 import { require_jsx_runtime, require_react, require_react_dom } from "../_libs/@tanstack/react-router+[...].mjs";
-import { Archive, ArrowDownRight, ArrowRight, Building2, Calculator, ChartColumn, ChartNoAxesColumnIncreasing, ChevronLeft, ChevronRight, ChevronUp, CircleCheck, CircleQuestionMark, Clipboard, ClipboardCheck, ClipboardList, Clock, Cpu, DollarSign, FileChartColumn, FileCheckCorner, FileSpreadsheet, FileText, Folder, FolderClosed, FolderGit2, FolderKanban, IndianRupee, Info, Key, Layers, LayoutGrid, Link, Mail, MapPin, Menu, MessageSquareQuote, PackageCheck, Phone, Plus, Scale, Search, Send, Server, Settings, Shield, ShieldAlert, ShieldCheck, ShoppingCart, SlidersHorizontal, Sparkles, Star, TriangleAlert, UserCheck, Users, UsersRound, X } from "../_libs/lucide-react.mjs";
-import { image_default } from "./router-Czzrui6V.mjs";
+import { Archive, ArrowDownRight, ArrowRight, Building2, Calculator, ChartColumn, ChartNoAxesColumnIncreasing, ChevronLeft, ChevronRight, ChevronUp, CircleCheck, CircleQuestionMark, CircleX, Clipboard, ClipboardCheck, ClipboardList, Clock, Cpu, DollarSign, FileChartColumn, FileCheckCorner, FileSpreadsheet, FileText, Folder, FolderClosed, FolderGit2, FolderKanban, IndianRupee, Info, Key, Layers, LayoutGrid, Link, Mail, MapPin, Menu, MessageSquareQuote, PackageCheck, Phone, Plus, Scale, Search, Send, Server, Settings, Shield, ShieldAlert, ShieldCheck, ShoppingCart, SlidersHorizontal, Sparkles, Star, TriangleAlert, UserCheck, Users, UsersRound, X } from "../_libs/lucide-react.mjs";
+import { image_default } from "./router-B3go9HJ9.mjs";
 import { require_dist } from "../_libs/react-fast-marquee.mjs";
 import { SiBootstrap, SiDjango, SiHtml5, SiPostgresql, SiPython, SiReact } from "../_libs/react-icons.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DX3FqewU.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BI4OebBN.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var import_react_dom = require_react_dom();
@@ -1762,6 +1762,242 @@ function Modules() {
 					"aria-selected": activeIndex === idx,
 					"aria-label": `Go to module ${idx + 1}: ${mod.title}`
 				}, idx))
+			})
+		]
+	});
+}
+function ProblemSolutionSection() {
+	const problems = [
+		{
+			id: "p-01",
+			number: "01",
+			title: "Scattered Project Information",
+			description: "Project details, BOQ, milestones and progress information can become difficult to manage when they are maintained across disconnected systems."
+		},
+		{
+			id: "p-02",
+			number: "02",
+			title: "Manual Material Tracking",
+			description: "Tracking requested, approved, received, issued and consumed materials manually can lead to visibility gaps and avoidable errors."
+		},
+		{
+			id: "p-03",
+			number: "03",
+			title: "Disconnected Procurement",
+			description: "Material requests, purchase orders and receipts can become difficult to follow when procurement activities are not connected."
+		},
+		{
+			id: "p-04",
+			number: "04",
+			title: "Limited Stock Visibility",
+			description: "Teams may struggle to understand project-wise material availability, usage and remaining stock without centralized inventory tracking."
+		},
+		{
+			id: "p-05",
+			number: "05",
+			title: "Complex Site & Contractor Management",
+			description: "Managing site consumption, work orders and contractor activities across projects can become difficult without structured workflows."
+		},
+		{
+			id: "p-06",
+			number: "06",
+			title: "Limited Project Cost Visibility",
+			description: "Project teams need better visibility into operational and project-related costs to support informed decisions."
+		}
+	];
+	const solutions = [
+		{
+			id: "s-01",
+			number: "01",
+			title: "Centralized Project Management",
+			description: "Manage project information, milestones, BOQ and engineering progress through a structured project workflow.",
+			badge: "Centralized"
+		},
+		{
+			id: "s-02",
+			number: "02",
+			title: "Connected Material Management",
+			description: "Connect material requests, approvals, stock and site consumption within a unified material workflow.",
+			badge: "Connected"
+		},
+		{
+			id: "s-03",
+			number: "03",
+			title: "Integrated Procurement Workflow",
+			description: "Connect material requests with purchase orders and material receipts for better procurement tracking.",
+			badge: "Workflow-driven"
+		},
+		{
+			id: "s-04",
+			number: "04",
+			title: "Project-wise Stock Visibility",
+			description: "Track available, issued, consumed and remaining material quantities with centralized inventory workflows.",
+			badge: "Project-wise"
+		},
+		{
+			id: "s-05",
+			number: "05",
+			title: "Structured Site & Contractor Operations",
+			description: "Manage site consumption, work orders and contractor-related activities through organized operational workflows.",
+			badge: "Role-based"
+		},
+		{
+			id: "s-06",
+			number: "06",
+			title: "Project Cost Management",
+			description: "Bring project-related costing information into a structured workflow for better financial visibility.",
+			badge: "Unified"
+		}
+	];
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		id: "problem-solutions",
+		className: "section-padding problem-solutions-section position-relative overflow-hidden",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "ambient-glow glow-blue problem-solutions-glow-left" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "ambient-glow glow-green problem-solutions-glow-right" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "container position-relative z-index-1",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "text-center mb-5 pb-lg-2",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "problem-solution-pill-badge mb-3",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "problem-solution-pill-text",
+									children: "PROBLEM"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
+									size: 13,
+									className: "problem-solution-pill-arrow"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "problem-solution-pill-text",
+									children: "SOLUTION"
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							className: "display-5 fw-bold mb-3 text-white problem-solution-heading",
+							children: [
+								"Built to Solve the ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "gradient-text",
+									children: "Challenges"
+								}),
+								" Behind",
+								" ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "gradient-text",
+									children: "Construction Operations"
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "lead fw-semibold mx-auto max-w-3xl text-slate-300 problem-solution-lead",
+							children: "ConstructionERP brings projects, materials, procurement, site operations, contractors and costs together into one connected workflow — helping construction teams manage operations with greater clarity and control."
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "row g-4 problem-solutions-grid",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "col-12 col-lg-6",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "problem-solution-panel problem-panel h-100",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "problem-solution-col-header pb-3 mb-2 d-flex align-items-center gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "problem-solution-col-icon-circle problem-icon-glow",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleX, {
+										size: 20,
+										strokeWidth: 2
+									})
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									className: "h4 fw-bold text-white mb-0 problem-solution-col-title",
+									children: "Problems Holding Construction Teams Back"
+								}) })]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "problem-solution-list",
+								children: problems.map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: `problem-solution-item problem-item ${idx !== problems.length - 1 ? "problem-solution-item-divider" : ""}`,
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "d-flex align-items-start gap-3",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "problem-solution-item-icon problem-icon-circle flex-shrink-0 mt-1",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleX, {
+												size: 17,
+												strokeWidth: 2
+											})
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex-grow-1 min-w-0",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "d-flex align-items-center justify-content-between mb-1",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+													className: "problem-solution-item-title mb-0 text-white",
+													children: item.title
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "problem-solution-item-num font-monospace small",
+													children: item.number
+												})]
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+												className: "problem-solution-item-desc mb-0 text-slate-400",
+												children: item.description
+											})]
+										})]
+									})
+								}, item.id))
+							})]
+						})
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "col-12 col-lg-6",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "problem-solution-panel solution-panel h-100",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "problem-solution-col-header pb-3 mb-2 d-flex align-items-center gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "problem-solution-col-icon-circle solution-icon-glow",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, {
+										size: 20,
+										strokeWidth: 2
+									})
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									className: "h4 fw-bold text-white mb-0 problem-solution-col-title",
+									children: "How ConstructionERP Solves Them"
+								}) })]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "problem-solution-list",
+								children: solutions.map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: `problem-solution-item solution-item ${idx !== solutions.length - 1 ? "problem-solution-item-divider" : ""}`,
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "d-flex align-items-start gap-3",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "problem-solution-item-icon solution-icon-circle flex-shrink-0 mt-1",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, {
+												size: 17,
+												strokeWidth: 2
+											})
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex-grow-1 min-w-0",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "d-flex flex-wrap align-items-center justify-content-between gap-2 mb-1",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+													className: "problem-solution-item-title mb-0 text-white",
+													children: item.title
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "problem-solution-capability-badge",
+													children: item.badge
+												})]
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+												className: "problem-solution-item-desc mb-0 text-slate-400",
+												children: item.description
+											})]
+										})]
+									})
+								}, item.id))
+							})]
+						})
+					})]
+				})]
 			})
 		]
 	});
@@ -5144,7 +5380,7 @@ function Footer() {
 var navItems = [
 	{
 		label: "Solutions",
-		target: "overview"
+		target: "problem-solutions"
 	},
 	{
 		label: "Services",
@@ -5383,6 +5619,10 @@ function Index() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "reveal",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Modules, {})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "reveal",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ProblemSolutionSection, {})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "reveal",
